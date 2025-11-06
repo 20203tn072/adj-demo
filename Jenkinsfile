@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
 
     stages {
@@ -38,11 +38,12 @@ pipeline{
                 sh '''
                     docker compose up --build -d 
                 '''
+            }
         }
     }
 
     post {
-        success{
+        success {
             echo "Pipeline ejecutado con exitosamente."
         }
 
@@ -50,7 +51,7 @@ pipeline{
             echo "Error al ejecutar el pipeline."
         }
         
-        always{
+        always {
             echo "Pipeline finalizado."
         }
     }
